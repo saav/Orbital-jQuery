@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- JQSelectorTest.html -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Testing jQuery Selectors</title>
+<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$( function() {   // Shorthand for .ready()
+   console.log($('#header'));  // ID-Selector
+   console.log($('p'));        // Tag-Selector
+   console.log($('.non-existence'));  // Class-Selector
+});
+</script>
+</head>
+ 
+<body>
+<div id="header">
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+</div>
+</body>
+</html>
