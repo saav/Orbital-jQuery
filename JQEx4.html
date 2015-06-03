@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Example 4: Ajax Request/Response</title>
+<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function() {
+   // Bind submit button onclick handler to send an Ajax request and
+   //  process Ajax response.
+   $(':submit').click(function (event) {
+      event.preventDefault();  // Do not run the default action
+      var submittedMessage = $(':text[name="message"]').val();
+      $.ajax({
+         type: 'POST',
+         url:  'ProcessMessage.php',
+         data: { message: submittedMessage }
+      })
+         .done( function (responseText) {
+            // Triggered if response status code is 200 (OK)
+            $('#message').html('Your message is: ' + responseText);
+         })
+         .fail( function (jqXHR, status, error) {
+            // Triggered if response status code is NOT 200 (OK)
+            alert(jqXHR.responseText);
+         })
+         .always( function() {
+            // Always run after .done() or .fail()
+            $('p:first').after('<p>Thank you.</p>');
+         });
+   });
+});
+</script>
+</head>
+<body>
+<form method="POST">
+  <label>Enter your message: <input type="text" name="message"></label><br>
+  <input type="submit">
+</form>
+<p id="message">&nbsp;</p>
+</body>
+</html>
