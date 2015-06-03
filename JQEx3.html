@@ -11,78 +11,41 @@
 // to bind click event handle to all the buttons
 $( function() {
    // Show it by popping up
-   $(':button[id="btnShow"]').click( function() {
-      $('#logo').show();
-   });
+   // use show()
  
    // Hide it by popping out
-   $(':button[id="btnHide"]').click( function() {
-      $('#logo').hide();
-   });
+   // use hide()
  
    // If it is visible, hide it; otherwise, show it
-   $(':button[id="btnToggle"]').click( function() {
-      $('#logo').toggle();
-   });
+   //use toggle()
  
    // Show by fading in
-   $(':button[id="btnFadeIn"]').click( function() {
-      $('#logo').fadeIn(1000);  // Speed: 1 sec
-   });
+   // use fadeIn()
  
    // Hide by fading out
-   $(':button[id="btnFadeOut"]').click( function() {
-      $('#logo').fadeOut(
-         2000,                // Speed: 2 sec
-         function() {         // Callback when complete
-            alert('done!');
-         });
-   });
+   // use fadeOut()
  
    // If it is visible, fade-out; Otherwise, fade-in
-   $(':button[id="btnFadeToggle"]').click( function() {
-      $('#logo').fadeToggle(3000);  // Speed: 3 sec
-   });
+   //use fadeToggle()
  
    // Hide by sliding-up to top-left corner
-   $(':button[id="btnSlideUp"]').click( function() {
-      $('#logo').slideUp();   // disappear,
-   });
+   //use slideUp()
  
    // Show by sliding-down from top-left corner
-   $(':button[id="btnSlideDown"]').click( function() {
-      $('#logo').slideDown();
-   });
+   // use slideDown()
  
    // If it is visible, slide-up; Otherwise, slide-down
-   $(':button[id="btnSlideToggle"]').click( function() {
-      $('#logo').slideToggle();
-   });
+   //user slideToggle()
  
  
    // Custom animation, by applying given CSS properties
    var toggleFlag = true;
    $(':button[id="btnAnimate"]').click( function() {
       if (toggleFlag) {
-         $('#logo')
-            .show()
-            .animate(
-               { 'margin-left': '30px', // Apply these CSS properties
-                 'margin-top' : '20px',
-                 'opacity': 0.2      // semi-transparent
-               },
-               2000  // Speed: 2 sec
-            );
+         //use show() and animate(css prop, time)
       } else {
          $('#logo')
-            .show()
-            .animate(
-               { 'margin-left': '0px', // Apply these CSS properties
-                 'margin-top' : '0px',
-                 'opacity': 1.0        // not transparent
-               },
-               3000  // Speed: 3 sec
-            );
+            //use show and animate(css prop, time)
       }
       toggleFlag = !toggleFlag;
    });

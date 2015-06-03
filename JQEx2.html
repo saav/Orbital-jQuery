@@ -9,21 +9,14 @@
 // Run after the ROM tree is constructed.
 $(document).ready( function() {
    // Set the content
-   $('#hello').html('Click me!');
+   // use .html
  
    // Bind a onclick handler to a selected element
-   $('#hello').click(function() {
-      $(this).html('Hello, world!');
-      return false;   // Prevent triggering the default handler
-   });
+   // make use of .click()
+   //remeber to prevent trigger default action
  
    // Bind onmouseover/onmouseout handlers to all selected elements
-   $('p').mouseover(function() {
-      $(this).addClass('green');
-   });
-   $('p').mouseout(function() {
-      $(this).removeClass('green');
-   });
+   // use mousover() and mouseout() handlers
 });
 </script>
 <style>

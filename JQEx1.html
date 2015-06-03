@@ -9,24 +9,21 @@
 // Run after the ROM tree is constructed.
 $(document).ready( function() {
    // Select an element that matches the element's unique id
-   $('#hello').html('Hello, world!');   // Replace innerHTML
-   $('#hello').addClass('green');       // Add CSS class
+     // Replace innerHTML - use .html()
+     // Add CSS class - use .addClass()
  
    // Select an element that matches the element's "unique id"
-   $('#message').append("(id matched)");  // Append at the end
+     // Append at the end - use. append()
  
    // Select element(s) that match "HTML tag name" and process via implicit loop
-   $('p').prepend("(tag-name matched)");  // Add in front
+    // Add in front - use .prepend()
  
    // Select element(s) that match the "CSS classname" and process via explicit loop
-   $('.red').each( function() {
-      $(this).append("(class-name matched)");
-      $(this).prepend("(class-name matched)");
-   });
+    // traverse each selected element - use .each()
  
    // Apply many operations via chaining
-   $('.red').before("<p>Before</p>")   // before the current element
-            .after("<p>After</p>");    // after the current element
+   //use .before()  // before the current element
+   //use    .after()    // after the current element
 });
 </script>
 <style>

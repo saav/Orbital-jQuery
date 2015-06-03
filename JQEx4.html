@@ -11,15 +11,16 @@ $(document).ready(function() {
    //  process Ajax response.
    $(':submit').click(function (event) {
       event.preventDefault();  // Do not run the default action
-      var submittedMessage = $(':text[name="message"]').val();
+      var submittedMessage = {};
+      //obtain submitted message using val()
       $.ajax({
-         type: 'POST',
-         url:  'ProcessMessage.php',
-         data: { message: submittedMessage }
+         type: 
+         url:  
+         data:
       })
          .done( function (responseText) {
             // Triggered if response status code is 200 (OK)
-            $('#message').html('Your message is: ' + responseText);
+            //update message
          })
          .fail( function (jqXHR, status, error) {
             // Triggered if response status code is NOT 200 (OK)
@@ -27,8 +28,20 @@ $(document).ready(function() {
          })
          .always( function() {
             // Always run after .done() or .fail()
-            $('p:first').after('<p>Thank you.</p>');
+            //update p using after()
          });
+      
+
+      /*$.ajax({
+         type: 'POST',
+         url:  'ProcessMessage.php',
+         data: { message: submittedMessage },
+         success: function(res){
+            $('#message').html('Your message is: ' + responseText);
+         },
+         aync : false
+      })
+      */
    });
 });
 </script>
